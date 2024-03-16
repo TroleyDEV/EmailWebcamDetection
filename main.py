@@ -3,8 +3,6 @@ import time
 
 import cv2
 
-from emailing import send_email
-
 video = cv2.VideoCapture(0)
 time.sleep(1)
 
@@ -37,7 +35,7 @@ while True:
         rectangle = cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 255, 0))
         if rectangle.any():
             status = 1
-            cv2.imwrite(f"images/{count}image.png", frame)
+            cv2.imwrite(f"images/{count}.png", frame)
             count += 1
             all_images = glob.glob("images/*.png")
             index = int(len(all_images) / 2)
@@ -47,8 +45,8 @@ while True:
     status_list = status_list[-2:]
 
     if status_list[0] == 1 and status_list[1] == 0:
-        send_email()
-
+        # send_email()
+        print("tak")
     print(status_list)
     cv2.imshow("Video", frame)
     key = cv2.waitKey(1)
