@@ -7,8 +7,6 @@ PASSWORD = os.environ.get("PASSWORD_PORTFOLIO_APP")
 SENDER = "mateusz.mlynarczyk82@gmail.com"
 RECEIVER = "mateusz.mlynarczyk82@gmail.com"
 
-print(PASSWORD)
-
 
 def send_email(image_path):
     email_message = EmailMessage()
