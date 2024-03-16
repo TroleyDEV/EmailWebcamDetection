@@ -31,7 +31,7 @@ while True:
             continue
         x, y, w, h = cv2.boundingRect(contour)
         rectangle = cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 255, 0))
-        if rectangle:
+        if rectangle.any():
             send_email()
 
     cv2.imshow("Video", frame)
