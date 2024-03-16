@@ -3,6 +3,8 @@ import time
 
 import cv2
 
+from emailing import send_email
+
 video = cv2.VideoCapture(0)
 time.sleep(1)
 
@@ -45,8 +47,7 @@ while True:
     status_list = status_list[-2:]
 
     if status_list[0] == 1 and status_list[1] == 0:
-        # send_email()
-        print("tak")
+        send_email()
     print(status_list)
     cv2.imshow("Video", frame)
     key = cv2.waitKey(1)
